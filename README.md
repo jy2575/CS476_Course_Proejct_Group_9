@@ -15,14 +15,12 @@ Obviously, the COVID-19 has greatly disrupted the city’s traffic pattern, but 
 Project Design
 We attempted to use applications of the Hadoop ecosystem to analyze traffic activity changes of NYC to take advantage of their ability to process large datasets efficiently. Specifically, we used MapReduce to clean as well as to profile the input datasets. After the cleaned datasets were obtained, we imported them to Hive to perform queries for the purpose of our analytics. Finally, data visualizations across datasets were conducted to provide additional insights besides Hive. The analytic design diagram is shown in Fig.1.
 
-&nbsp;
-&nbsp;
+
 
 ![Fig.1](./diagrams/Picture1.png)
 
 Fig.1
 
-&nbsp;
 
 ## Motivation:
 As residents of NYC and active participants of local transportation, we could genuinely relate to how strong the pandemic has impacted individuals’ routine and mental health due to stress caused by major lifestyle changes. To help address the NYC residents’ concerns about the COVID-19 pandemic, our group collect data from various public sources and perform data processing and analysis with a tech stack building on the powerful Hadoop ecosystems.
@@ -48,7 +46,6 @@ After preprocessing all the datasets, we imported the two cleaned datasets to Hi
 ![Fig.1](./diagrams/Picture2.png)
 Fig.2
 
-&nbsp;
 ![Fig.1](./diagrams/Picture3.jpg)
 Fig.3
 
@@ -74,7 +71,6 @@ Fig.5 (orange line-Subways, blue line-Buses, gray line-Road Traffics)
 ![Fig.1](./diagrams/Picture6.png)
 Fig.6
 
-&nbsp;
 
 ## Conclusions
 In conclusion, this analytic presented multiple findings and provided some potential causes for them pertaining to the topic of how the COVID-19 has affected different measures of NYC’s transportation activities.
