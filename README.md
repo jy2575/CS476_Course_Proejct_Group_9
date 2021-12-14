@@ -1,6 +1,5 @@
 # COVID-19’s impact on the NYC Traffic
-## Yilin Shan, Jason Yu
-&nbsp;
+### Yilin Shan, Jason Yu
 ## Abstract
 The World Health Organization later announced COVID-19 a global pandemic in March 2020.
 Similar works have been done regarding how urban transportation activity changes in response to disruptive events, however, it is still unclear how specifically New York City’s traffic is being impacted during the pandemic. To investigate that, our group conducted analytics based on Hadoop MapReduce and Hive as well as data visualizations on datasets of New York City’s daily new covid cases, bicycle records, and other transportation methods. We found out that the overall cycling activity in the city increased during the pandemic and the cycling activity is negatively correlated to the number of new covid case. Besides, the vaccination could be contributing to the significant increase in average bicycle counts from April 2021. Finally, we were pleased by the observation that the city’s public transportations were steadily recovering, with the road traffics being nearly its pre-pandemic level. We believe these findings would be helpful for addressing the urban residents’ concern of pandemic and for implementing future public health policies in similar environments.
