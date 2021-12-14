@@ -1,0 +1,49 @@
+beeline --silent
+!connect jdbc:hive2://hm-1.hpc.nyu.edu:10000/
+Use jy2575;
+
+create external table bi_sum (`date` date, `count` int) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE;
+load data inpath 'hdfs://horton.hpc.nyu.edu:8020/user/jy2575/project_data/bi_sum.csv' overwrite into table bi_sum; 
+
+select * from bi_sum;
+
+Select count(*) from bi_sum where `date` <= '2021-08-01' and `date` >= '2020-03-01';
+
+select sum(count) from bi_sum where `date` <= '2021-08-01' and `date` >= '2020-03-01';
+select sum(count) from bi_sum where `date` <= '2020-08-01' and `date` >= '2019-03-01';
+
+select avg(count) from bi_sum where `date` <= '2021-08-01' and `date` >= '2020-03-01';
+select avg(count) from bi_sum where `date` <= '2020-08-01' and `date` >= '2019-03-01';
+
+select avg(count) from bi_sum where `date` <= '2021-07-01' and `date` >= '2021-04-01';
+
+select max(count) from bi_sum where `date` <= '2021-08-01' and `date` >= '2020-03-01';
+Select * from bi_sum where `count`=66489;
+
+select min(count) from bi_sum where `date` <= '2021-08-01' and `date` >= '2020-03-01';
+Select * from bi_sum where `count`=913;
+
+
+create external table covid (`date` date, `count` int) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE;
+load data inpath 'hdfs://horton.hpc.nyu.edu:8020/user/jy2575/project_data/covid.csv' overwrite into table covid; 
+
+select * from covid;
+
+select sum(count) from covid where `date` <= '2021-08-01' and `date` >= '2020-03-01';
+
+select avg(count) from covid where `date` <= '2021-08-01' and `date` >= '2020-03-01';
+
+select avg(count) from covid where `date` <= '2021-07-01' and `date` >= '2021-04-01';
+
+select max(count) from covid where `date` <= '2021-08-01' and `date` >= '2020-03-01';
+
+select min(count) from covid where `date` <= '2021-08-01' and `date` >= '2020-03-01';
+
+
+Select avg(bi_sum.count) from bi_sum join covid on (bi_sum.`date`=covid.`date`) where bi_sum.`date` <= '2021-08-01' and bi_sum.`date` >= '2020-03-01' and covid.count>=1500;
+Select avg(bi_sum.count) from bi_sum join covid on (bi_sum.`date`=covid.`date`) where bi_sum.`date` <= '2021-08-01' and bi_sum.`date` >= '2020-03-01' and covid.count>=3000;
+Select avg(bi_sum.count) from bi_sum join covid on (bi_sum.`date`=covid.`date`) where bi_sum.`date` <= '2021-08-01' and bi_sum.`date` >= '2020-03-01' and covid.count>=4500;
+
+
+Select corr(bi_sum.count,covid.count) from bi_sum join covid on (bi_sum.`date`=covid.`date`) where bi_sum.`date` <= '2021-08-01' and bi_sum.`date` >= '2020-03-01'; 
+
